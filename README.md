@@ -70,6 +70,9 @@ if (!isset($params['code']) or empty($params['code'])) {
 ```
 Please, for more information see the PHP League's general usage examples.
 
+## Refreshing a Token
+Bitly tokens do not expire and do not need to be refreshed.
+
 ## Testing
 
 ```
