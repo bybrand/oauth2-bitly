@@ -81,6 +81,7 @@ class BitlyTest extends TestCase
         $response->shouldReceive('getBody')
             ->andReturn('{"access_token": "mock_access_token", "token_type": "bearer", "login": "mock_login", "apiKey": "api_key_id"}');
         $response->shouldReceive('getHeader')->andReturn(['content-type' => 'json']);
+        $response->shouldReceive('getStatusCode')->andReturn(200);
 
         $client = m::mock('GuzzleHttp\ClientInterface');
         $client->shouldReceive('send')->times(1)->andReturn($response);
@@ -93,6 +94,7 @@ class BitlyTest extends TestCase
         $this->assertEquals('mock_access_token', $token->getToken());
         $this->assertNull($token->getExpires());
         $this->assertNull($token->getRefreshToken());
+
         $this->assertEquals('mock_login', $token->getResourceOwnerId());
     }
 }

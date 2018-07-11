@@ -36,7 +36,7 @@ class Bitly extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'https://www.bitly.com/oauth/access_token';
+        return 'https://api-ssl.bitly.com/oauth/access_token';
     }
 
     /**
@@ -71,9 +71,9 @@ class Bitly extends AbstractProvider
      */
     protected function checkResponse(ResponseInterface $response, $data)
     {
-        if (isset($data['error'])) {
+        if ($response->getStatusCode() >= 400) {
             throw new IdentityProviderException(
-                $data['error'] ?: $response->getReasonPhrase(),
+                $response->getReasonPhrase(),
                 $response->getStatusCode(),
                 $response
             );

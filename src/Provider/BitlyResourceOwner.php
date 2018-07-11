@@ -33,7 +33,7 @@ class BitlyResourceOwner implements ResourceOwnerInterface
      */
     public function getId()
     {
-        return $this->getValueByKey($this->response, 'login');
+        return null;
     }
 
     /**
