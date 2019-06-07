@@ -1,6 +1,6 @@
 # Bitly Provider for PHP OAuth 2.0 Client
 
-This package provides Bitly OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client). Work with Bitly API (4)
+This package provides Bitly OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client). Work with Bitly API (4). Initially, this module was used for the integration of [Bybrand](https://www.bybrand.io) with Bitly and is in production.
 
 Full documentation, can be see in [Bitly documentation](http://dev.bitly.com/v4_documentation.html).
 
